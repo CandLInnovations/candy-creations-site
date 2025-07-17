@@ -19,11 +19,9 @@ export default function HomePage() {
 
   // Array of background images for rotation
   const backgroundImages = [
-    '/fondant_candy_center_cooking_with_thermometer.png',
-    '/chocolate_melting_on_toffee.jpg',
-    '/pouring_caramel_almonds.jpg',
-    '/roasted_almonds_tray.jpg',
-    '/reaching_for_toffee.jpg'
+    '/salted_carmel_chocolate_tray.webp',
+    '/purple-chocolate-box.webp',
+    '/tree_box_hand_dipped_chocolates_home.webp'
   ];
 
   // Rotate background images every 4 seconds
