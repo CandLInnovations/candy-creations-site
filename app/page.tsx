@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Heart, Star, Book, Users, BookOpen, Cookie, Sparkles } from 'lucide-react';
+import { Heart, Star, Book, Users, BookOpen, Cookie, Sparkles, Menu, X, Candy } from 'lucide-react';
 import Image from 'next/image';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -15,26 +15,6 @@ export default function HomePage() {
     interests: ''
   });
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Array of background images for rotation
-  const backgroundImages = [
-    '/salted_carmel_chocolate_tray.webp',
-    '/purple-chocolate-box.webp',
-    '/tree_box_hand_dipped_chocolates_home.webp'
-  ];
-
-  // Rotate background images every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        (prevIndex + 1) % backgroundImages.length
-      );
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [backgroundImages.length]);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -44,185 +24,179 @@ export default function HomePage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Form submitted:', formData);
     alert('Thank you for your interest! We\'ll be in touch soon about upcoming classes.');
     setFormData({ name: '', email: '', phone: '', interests: '' });
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50">
       <Navbar />
 
-      {/* Hero Section with Rotating Background */}
-      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Images */}
-        <div className="absolute inset-0">
-          {backgroundImages.map((image, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <Image
-                src={image}
-                alt={`Candy making process ${index + 1}`}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
+      {/* Light & Airy Hero Section */}
+      <section id="home" className="relative pt-32 pb-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Hero Content */}
+            <div className="text-center lg:text-left">
+              <div className="mb-8">
+                <div className="inline-block bg-gradient-to-r from-pink-400 to-purple-400 rounded-full p-4 mb-6 animate-bounce">
+                  <Candy className="w-12 h-12 text-white" />
+                </div>
+                <h1 className="hero-title font-script text-6xl lg:text-7xl mb-6 leading-tight bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                  Become a Chocolatier Extraordinaire
+                </h1>
+                <p className="text-xl text-gray-700 mb-8 leading-relaxed font-serif">
+                  Join our magical candy-making family where Grandma Effie's legacy lives on through 
+                  warm hands, sweet stories, and delicious creations made with love.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="#classes" className="btn-primary">
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  Explore Classes
+                </a>
+                <a href="#contact" className="btn-secondary">
+                  <Heart className="w-5 h-5 mr-2" />
+                  Join Our Family
+                </a>
+              </div>
             </div>
-          ))}
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 pt-48 md:pt-0">
-          <div className="mb-8">
-            <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full p-4 mb-6">
-              <Cookie className="w-12 h-12 text-white" />
-            </div>
-            <h2 className="hero-title font-bold mb-6 leading-tight drop-shadow-2xl">
-              Become A Chocolatier <span className="text-purple-300">Extraordinaire</span>
-            </h2>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20 mb-8">
-            <p className="text-xl mb-6 leading-relaxed drop-shadow">
-              Learn the time-honored art of candy making in a warm, welcoming environment. 
-              Our hands-on classes teach you everything from basic techniques to advanced chocolate crafting, 
-              all while sharing stories and creating sweet memories together.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#classes" className="btn-primary">
-                <BookOpen className="w-5 h-5 mr-2" />
-                View Candy Classes
-              </a>
-              <a href="#contact" className="btn-secondary bg-white/20 border-white text-white hover:bg-white hover:text-purple-600">
-                <Heart className="w-5 h-5 mr-2" />
-                Get Started
-              </a>
+            {/* Hero Image */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                <Image
+                  src="/salted_carmel_chocolate_tray.webp"
+                  alt="Beautiful handcrafted chocolates"
+                  width={600}
+                  height={400}
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-pink-900/20 to-transparent"></div>
+              </div>
+              {/* Floating decoration */}
+              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-pink-400 rounded-full p-3 animate-pulse">
+                <Candy className="w-6 h-6 text-white" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Three Main Sections */}
-      <section className="py-16 bg-gradient-to-br from-purple-50 via-white to-indigo-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              
-              {/* Creative Inspiration */}
-              <div className="card">
-                <div className="mb-6">
-                  <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
-                    <Image
-                      src="/grandma_effie_inspiration.webp"
-                      alt="Creative inspiration - vintage candy making"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex items-center">
-                    <div className="icon-badge mr-4">
-                      <Heart className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800">Creative Inspiration</h3>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <p className="text-purple-600 font-bold text-lg">1897 - Present</p>
-                  <p className="text-gray-700 leading-relaxed">
-                    My Grandma Effie was, and still is, my greatest creative inspiration. She always had pots of geraniums 
-                    lining the kitchen window sill, and she made the best pancakes in the world!!!
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    Grandma Effie loved gardening, sewing, crocheting and tatting. She loved making all kinds of candy 
-                    and took a candy course through the mail circa 1920-1930.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    I loved exploring her sewing room as a child and so wanted to be just like my Grandma Effie.
-                  </p>
+      {/* About Section with Story Cards */}
+      <section className="py-20 bg-white/70 backdrop-blur-sm">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="font-script text-5xl mb-6 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+              Our Sweet Story
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto font-serif">
+              Every candy tells a story, and ours began with a grandmother's love and a dream to share sweetness with the world.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Grandma Effie Story */}
+            <div className="story-card group">
+              <div className="relative mb-6 overflow-hidden rounded-2xl">
+                <Image
+                  src="/grandma_effie_inspiration.webp"
+                  alt="Grandma Effie's inspiration"
+                  width={400}
+                  height={300}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Since 1897
+                  </span>
                 </div>
               </div>
-
-              {/* Fondant Centers */}
-              <div className="card">
-                <div className="mb-6">
-                  <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
-                    <Image
-                      src="/fondant.webp"
-                      alt="Fondant centers being made"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex items-center">
-                    <div className="icon-badge mr-4">
-                      <Sparkles className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800">Fondant Centers</h3>
-                  </div>
+              <div className="flex items-center mb-4">
+                <div className="icon-badge-soft mr-4">
+                  <Heart className="w-6 h-6 text-pink-500" />
                 </div>
-                <div className="space-y-4">
-                  <p className="text-gray-700 leading-relaxed">
-                    Master the art of creating smooth, creamy fondant centers that melt perfectly in your mouth. 
-                    Learn traditional techniques passed down through generations.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    From classic vanilla and chocolate to exotic fruit flavors, discover how to create 
-                    professional-quality fondant that forms the heart of exceptional chocolates.
-                  </p>
-                  <div className="mt-6">
-                    <div className="bg-white/70 rounded-lg p-4">
-                      <p className="text-sm text-gray-600 italic">
-                        "The fondant technique Carla taught me has transformed my candy making completely!" - Sarah M.
-                      </p>
-                    </div>
-                  </div>
+                <h3 className="text-2xl font-script text-gray-800">Grandma Effie's Legacy</h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed font-serif mb-4">
+                With geraniums lining her kitchen windowsill and the aroma of the world's best pancakes 
+                filling the air, Grandma Effie was pure magic in the kitchen.
+              </p>
+              <p className="text-gray-700 leading-relaxed font-serif">
+                Her mail-order candy course from the 1920s became the foundation of techniques we still 
+                cherish and teach today.
+              </p>
+            </div>
+
+            {/* Fondant Mastery */}
+            <div className="story-card group">
+              <div className="relative mb-6 overflow-hidden rounded-2xl">
+                <Image
+                  src="/fondant.webp"
+                  alt="Artisan fondant creation"
+                  width={400}
+                  height={300}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Master Class
+                  </span>
                 </div>
               </div>
-
-              {/* Candy Cookbook */}
-              <div className="card">
-                <div className="mb-6">
-                  <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
-                    <Image
-                      src="/pecan_logs_sliced.webp"
-                      alt="Vintage candy cookbook and recipes"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex items-center">
-                    <div className="icon-badge mr-4">
-                      <Book className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800">Candy Cookbook</h3>
-                  </div>
+              <div className="flex items-center mb-4">
+                <div className="icon-badge-soft mr-4">
+                  <Sparkles className="w-6 h-6 text-purple-500" />
                 </div>
-                <div className="space-y-4">
-                  <p className="text-gray-700 leading-relaxed">
-                    Take home a treasure trove of family recipes and techniques. Our comprehensive cookbook 
-                    includes step-by-step instructions for all the classics.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    From Grandma Effie's original caramel recipe to modern chocolate tempering techniques, 
-                    you'll have everything you need to continue your candy making journey at home.
-                  </p>
-                  <div className="mt-6">
-                    <div className="bg-white/70 rounded-lg p-4">
-                      <p className="text-sm text-purple-600 font-semibold">
-                        ✨ Includes over 50 family recipes
-                      </p>
-                      <p className="text-sm text-purple-600 font-semibold">
-                        ✨ Professional tips and troubleshooting
-                      </p>
-                    </div>
-                  </div>
+                <h3 className="text-2xl font-script text-gray-800">Silky Smooth Fondant</h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed font-serif mb-4">
+                Learn the gentle art of creating fondant that melts like a dream and carries flavors 
+                from classic vanilla to exotic passion fruit.
+              </p>
+              <div className="bg-purple-50 rounded-lg p-4">
+                <p className="text-sm text-purple-700 italic font-serif">
+                  "Carla's fondant technique changed everything for me!" - Sarah M.
+                </p>
+              </div>
+            </div>
+
+            {/* Recipe Collection */}
+            <div className="story-card group">
+              <div className="relative mb-6 overflow-hidden rounded-2xl">
+                <Image
+                  src="/pecan_logs_sliced.webp"
+                  alt="Artisan pecan logs"
+                  width={400}
+                  height={300}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    50+ Recipes
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center mb-4">
+                <div className="icon-badge-soft mr-4">
+                  <Book className="w-6 h-6 text-indigo-500" />
+                </div>
+                <h3 className="text-2xl font-script text-gray-800">Family Recipe Treasury</h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed font-serif mb-4">
+                Take home a collection of time-tested family recipes, complete with all the little 
+                secrets that make the difference between good and extraordinary.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center text-sm text-indigo-600 font-semibold">
+                  <Star className="w-4 h-4 mr-2" />
+                  Original caramel secrets
+                </div>
+                <div className="flex items-center text-sm text-indigo-600 font-semibold">
+                  <Star className="w-4 h-4 mr-2" />
+                  Chocolate tempering mastery
                 </div>
               </div>
             </div>
@@ -231,140 +205,185 @@ export default function HomePage() {
       </section>
 
       {/* Class Interest Form */}
-      <section id="classes" className="py-16 bg-gradient-to-r from-purple-50 to-indigo-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-block bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full p-4 mb-6">
-                <Users className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="section-title font-bold text-gray-800 mb-4">Join Our Sweet Community</h3>
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                Interested in learning the art of candy making? Fill out the form below to be notified 
-                about upcoming classes and special workshops. Let's create something sweet together!
-              </p>
+      <section id="classes" className="py-20 bg-gradient-to-br from-pink-50 to-purple-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-gradient-to-r from-pink-400 to-purple-400 rounded-full p-4 mb-6">
+              <Users className="w-12 h-12 text-white" />
             </div>
-            
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-purple-200">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="form-input"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="form-input"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-                
+            <h3 className="font-script text-5xl text-gray-800 mb-4">Join Our Sweet Family</h3>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto font-serif">
+              Ready to create magic in the kitchen? Let us know what sweet adventures you're dreaming of!
+            </p>
+          </div>
+          
+          <div className="form-card">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone Number (Optional)
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2 font-serif">
+                    Your Sweet Name *
                   </label>
                   <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleInputChange}
+                    required
                     className="form-input"
-                    placeholder="(555) 123-4567"
+                    placeholder="What should we call you?"
                   />
                 </div>
-                
                 <div>
-                  <label htmlFor="interests" className="block text-sm font-semibold text-gray-700 mb-2">
-                    What interests you most about candy making?
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2 font-serif">
+                    Email Address *
                   </label>
-                  <textarea
-                    id="interests"
-                    name="interests"
-                    value={formData.interests}
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleInputChange}
-                    rows={4}
-                    className="form-textarea"
-                    placeholder="Tell us about your interests, experience level, or any specific techniques you'd like to learn..."
+                    required
+                    className="form-input"
+                    placeholder="your@email.com"
                   />
                 </div>
-                
-                <div className="text-center">
-                  <button type="submit" className="btn-primary">
-                    <Heart className="w-5 h-5 mr-2 inline" />
-                    Get Class Updates
-                  </button>
+              </div>
+              
+              <div>
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2 font-serif">
+                  Phone Number (Optional)
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="form-input"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="interests" className="block text-sm font-semibold text-gray-700 mb-2 font-serif">
+                  What's your candy-making dream?
+                </label>
+                <textarea
+                  id="interests"
+                  name="interests"
+                  value={formData.interests}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="form-textarea"
+                  placeholder="Tell us about your sweet dreams, experience level, or any specific techniques you'd love to master..."
+                />
+              </div>
+              
+              <div className="text-center">
+                <button type="submit" className="btn-primary">
+                  <Heart className="w-5 h-5 mr-2" />
+                  Count Me In!
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Custom Aprons with More Images */}
+      <section className="py-20 bg-white/80">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-gradient-to-r from-pink-400 to-indigo-400 rounded-full p-4 mb-6">
+              <Star className="w-12 h-12 text-white" />
+            </div>
+            <h3 className="font-script text-5xl text-gray-800 mb-6">Look the Part</h3>
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto font-serif">
+              Complete your candy-making journey with a beautiful custom apron that's as unique as your creations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                <Image
+                  src="/purple-chocolate-box.webp"
+                  alt="Custom embroidered aprons"
+                  width={500}
+                  height={400}
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            
+            <div className="space-y-8">
+              <div className="flex items-start space-x-4">
+                <div className="icon-badge-soft flex-shrink-0">
+                  <Sparkles className="w-6 h-6 text-pink-500" />
                 </div>
-              </form>
+                <div>
+                  <h4 className="font-script text-2xl text-gray-800 mb-2">Personalized Just for You</h4>
+                  <p className="text-gray-700 font-serif">Add your name, a special message, or choose from our collection of sweet designs.</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="icon-badge-soft flex-shrink-0">
+                  <Heart className="w-6 h-6 text-purple-500" />
+                </div>
+                <div>
+                  <h4 className="font-script text-2xl text-gray-800 mb-2">Premium Quality</h4>
+                  <p className="text-gray-700 font-serif">Made from durable, comfortable fabric that keeps you looking professional through every messy, magical moment.</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="icon-badge-soft flex-shrink-0">
+                  <Star className="w-6 h-6 text-indigo-500" />
+                </div>
+                <div>
+                  <h4 className="font-script text-2xl text-gray-800 mb-2">Perfect Gift</h4>
+                  <p className="text-gray-700 font-serif">Surprise the candy lover in your life with a thoughtful, personalized apron they'll treasure.</p>
+                </div>
+              </div>
+              
+              <div className="pt-4">
+                <button className="btn-primary">
+                  Design My Apron
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Custom Aprons Section */}
-      <section className="py-16 bg-white/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full p-4 mb-6">
-              <Star className="w-12 h-12 text-white" />
-            </div>
-            <h3 className="section-title font-bold text-gray-800 mb-6">Custom Embroidered Aprons</h3>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              Complete your candy making experience with a beautiful custom embroidered apron. 
-              Perfect for classes or as a thoughtful gift for the candy maker in your life.
-            </p>
-            <div className="card">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <div className="bg-white/70 rounded-full p-4 w-16 h-16 mx-auto mb-4">
-                    <Sparkles className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h4 className="font-bold text-gray-800 mb-2">Personalized</h4>
-                  <p className="text-sm text-gray-600">Add your name or special message</p>
-                </div>
-                <div>
-                  <div className="bg-white/70 rounded-full p-4 w-16 h-16 mx-auto mb-4">
-                    <Heart className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h4 className="font-bold text-gray-800 mb-2">Quality Fabric</h4>
-                  <p className="text-sm text-gray-600">Durable and comfortable for all-day wear</p>
-                </div>
-                <div>
-                  <div className="bg-white/70 rounded-full p-4 w-16 h-16 mx-auto mb-4">
-                    <Book className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h4 className="font-bold text-gray-800 mb-2">Professional</h4>
-                  <p className="text-sm text-gray-600">Look the part of a skilled candy maker</p>
-                </div>
-              </div>
-              <div className="mt-8">
-                <button className="btn-primary">
-                  Order Custom Apron
-                </button>
-              </div>
+      {/* Final Call-to-Action with Image */}
+      <section className="py-20 bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <div className="relative mb-12">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl mx-auto max-w-md">
+              <Image
+                src="/tree_box_hand_dipped_chocolates_home.webp"
+                alt="Beautiful handcrafted chocolates ready to enjoy"
+                width={400}
+                height={300}
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent"></div>
             </div>
           </div>
+          
+          <h3 className="font-script text-5xl text-gray-800 mb-6">Your Sweet Adventure Awaits</h3>
+          <p className="text-xl text-gray-700 mb-8 font-serif leading-relaxed">
+            Join our family of candy makers and discover the joy of creating something truly special with your own hands.
+          </p>
+          <a href="#classes" className="btn-primary text-lg px-8 py-4">
+            <Cookie className="w-6 h-6 mr-3" />
+            Start My Sweet Journey
+          </a>
         </div>
       </section>
 
