@@ -43,7 +43,7 @@ export default function HomePage() {
                 <div className="inline-block bg-gradient-to-r from-pink-400 to-purple-400 rounded-full p-4 mb-6 animate-bounce">
                   <Candy className="w-12 h-12 text-white" />
                 </div>
-                <h1 className="hero-title font-script text-6xl lg:text-7xl mb-6 leading-tight bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                <h1 className="hero-title font-display text-6xl lg:text-7xl mb-6 leading-tight bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   Become a Chocolatier Extraordinaire
                 </h1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed font-serif">
@@ -89,7 +89,7 @@ export default function HomePage() {
       <section className="py-20 bg-white/70 backdrop-blur-sm">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="font-script text-5xl mb-6 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="section-title font-display text-5xl mb-8 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
               Our Sweet Story
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto font-serif">
@@ -118,13 +118,13 @@ export default function HomePage() {
                 <div className="icon-badge-soft mr-4">
                   <Heart className="w-6 h-6 text-pink-500" />
                 </div>
-                <h3 className="text-2xl font-script text-gray-800">Grandma Effie's Legacy</h3>
+                <h3 className="text-3xl font-display text-gray-800">Grandma Effie's Legacy</h3>
               </div>
-              <p className="text-gray-700 leading-relaxed font-serif mb-4">
+              <p className="text-lg text-gray-700 leading-relaxed font-serif mb-4">
                 With geraniums lining her kitchen windowsill and the aroma of the world's best pancakes 
                 filling the air, Grandma Effie was pure magic in the kitchen.
               </p>
-              <p className="text-gray-700 leading-relaxed font-serif">
+              <p className="text-lg text-gray-700 leading-relaxed font-serif">
                 Her mail-order candy course from the 1920s became the foundation of techniques we still 
                 cherish and teach today.
               </p>
@@ -150,14 +150,14 @@ export default function HomePage() {
                 <div className="icon-badge-soft mr-4">
                   <Sparkles className="w-6 h-6 text-purple-500" />
                 </div>
-                <h3 className="text-2xl font-script text-gray-800">Silky Smooth Fondant</h3>
+                <h3 className="text-3xl font-display text-gray-800">Silky Smooth Fondant</h3>
               </div>
-              <p className="text-gray-700 leading-relaxed font-serif mb-4">
+              <p className="text-lg text-gray-700 leading-relaxed font-serif mb-4">
                 Learn the gentle art of creating fondant that melts like a dream and carries flavors 
                 from classic vanilla to exotic passion fruit.
               </p>
               <div className="bg-purple-50 rounded-lg p-4">
-                <p className="text-sm text-purple-700 italic font-serif">
+                <p className="text-base text-purple-700 italic font-serif">
                   "Carla's fondant technique changed everything for me!" - Sarah M.
                 </p>
               </div>
@@ -183,18 +183,18 @@ export default function HomePage() {
                 <div className="icon-badge-soft mr-4">
                   <Book className="w-6 h-6 text-indigo-500" />
                 </div>
-                <h3 className="text-2xl font-script text-gray-800">Family Recipe Treasury</h3>
+                <h3 className="text-3xl font-display text-gray-800">Family Recipe Treasury</h3>
               </div>
-              <p className="text-gray-700 leading-relaxed font-serif mb-4">
+              <p className="text-lg text-gray-700 leading-relaxed font-serif mb-4">
                 Take home a collection of time-tested family recipes, complete with all the little 
                 secrets that make the difference between good and extraordinary.
               </p>
               <div className="space-y-2">
-                <div className="flex items-center text-sm text-indigo-600 font-semibold">
+                <div className="flex items-center text-base text-indigo-600 font-semibold">
                   <Star className="w-4 h-4 mr-2" />
                   Original caramel secrets
                 </div>
-                <div className="flex items-center text-sm text-indigo-600 font-semibold">
+                <div className="flex items-center text-base text-indigo-600 font-semibold">
                   <Star className="w-4 h-4 mr-2" />
                   Chocolate tempering mastery
                 </div>
@@ -211,7 +211,7 @@ export default function HomePage() {
             <div className="inline-block bg-gradient-to-r from-pink-400 to-purple-400 rounded-full p-4 mb-6">
               <Users className="w-12 h-12 text-white" />
             </div>
-            <h3 className="font-script text-5xl text-gray-800 mb-4">Join Our Sweet Family</h3>
+            <h3 className="section-title font-display text-5xl text-gray-800 mb-4">Join Our Sweet Family</h3>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto font-serif">
               Ready to create magic in the kitchen? Let us know what sweet adventures you're dreaming of!
             </p>
@@ -300,7 +300,7 @@ export default function HomePage() {
             <div className="inline-block bg-gradient-to-r from-pink-400 to-indigo-400 rounded-full p-4 mb-6">
               <Star className="w-12 h-12 text-white" />
             </div>
-            <h3 className="font-script text-5xl text-gray-800 mb-6">Look the Part</h3>
+            <h3 className="section-title font-display text-5xl text-gray-800 mb-6">Look the Part</h3>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto font-serif">
               Complete your candy-making journey with a beautiful custom apron that's as unique as your creations.
             </p>
@@ -325,7 +325,7 @@ export default function HomePage() {
                   <Sparkles className="w-6 h-6 text-pink-500" />
                 </div>
                 <div>
-                  <h4 className="font-script text-2xl text-gray-800 mb-2">Personalized Just for You</h4>
+                  <h4 className="font-display text-2xl text-gray-800 mb-2">Personalized Just for You</h4>
                   <p className="text-gray-700 font-serif">Add your name, a special message, or choose from our collection of sweet designs.</p>
                 </div>
               </div>
@@ -335,7 +335,7 @@ export default function HomePage() {
                   <Heart className="w-6 h-6 text-purple-500" />
                 </div>
                 <div>
-                  <h4 className="font-script text-2xl text-gray-800 mb-2">Premium Quality</h4>
+                  <h4 className="font-display text-2xl text-gray-800 mb-2">Premium Quality</h4>
                   <p className="text-gray-700 font-serif">Made from durable, comfortable fabric that keeps you looking professional through every messy, magical moment.</p>
                 </div>
               </div>
@@ -345,7 +345,7 @@ export default function HomePage() {
                   <Star className="w-6 h-6 text-indigo-500" />
                 </div>
                 <div>
-                  <h4 className="font-script text-2xl text-gray-800 mb-2">Perfect Gift</h4>
+                  <h4 className="font-display text-2xl text-gray-800 mb-2">Perfect Gift</h4>
                   <p className="text-gray-700 font-serif">Surprise the candy lover in your life with a thoughtful, personalized apron they'll treasure.</p>
                 </div>
               </div>
@@ -376,7 +376,7 @@ export default function HomePage() {
             </div>
           </div>
           
-          <h3 className="font-script text-5xl text-gray-800 mb-6">Your Sweet Adventure Awaits</h3>
+          <h3 className="section-title font-display text-5xl text-gray-800 mb-6">Your Sweet Adventure Awaits</h3>
           <p className="text-xl text-gray-700 mb-8 font-serif leading-relaxed">
             Join our family of candy makers and discover the joy of creating something truly special with your own hands.
           </p>

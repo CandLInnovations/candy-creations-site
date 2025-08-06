@@ -1,14 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'display': ['Lavishly Yours', 'cursive'],
+        'serif': ['Instrument Serif', 'serif'],
+        'script': ['Lavishly Yours', 'cursive'], // For backward compatibility
+      },
       colors: {
-        'brand-purple': '#6C68C4',
-        'brand-light-purple': '#AAA9EA',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
     },
   },

@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
 import './globals.css'
+import { instrumentSerif, displayFont } from './fonts'
 
 export const metadata: Metadata = {
   title: "Carla's Candy Creations",
@@ -14,7 +15,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap" 
+          rel="stylesheet" 
+        />
+      </head>
+      <body className={`${instrumentSerif.variable} ${displayFont.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }
