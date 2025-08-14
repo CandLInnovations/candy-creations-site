@@ -23,9 +23,9 @@ export default function Footer() {
             <div className="text-center">
               <h5 className="font-semibold mb-4">Quick Links</h5>
               <div className="space-y-2">
-                <a href="#classes" className="block text-gray-400 hover:text-purple-400 transition-colors">Candy Classes</a>
-                <a href="#about" className="block text-gray-400 hover:text-purple-400 transition-colors">About Carla</a>
-                <a href="#contact" className="block text-gray-400 hover:text-purple-400 transition-colors">Contact</a>
+                <a href="/classes" className="block text-gray-400 hover:text-purple-400 transition-colors">Candy Classes</a>
+                <a href="/about" className="block text-gray-400 hover:text-purple-400 transition-colors">About Carla</a>
+                <a href="/contact" className="block text-gray-400 hover:text-purple-400 transition-colors">Contact</a>
               </div>
             </div>
             
@@ -34,19 +34,26 @@ export default function Footer() {
               <div className="space-y-2">
                 <div className="flex items-center justify-center md:justify-end">
                   <Mail className="w-4 h-4 mr-2" />
-                  <span className="text-gray-400">info@carlascandycreations.com</span>
+                  <a href="mailto:carlascandycreations@proton.me" className="text-gray-400 hover:text-purple-400 transition-colors">
+                    carlascandycreations@proton.me
+                  </a>
                 </div>
                 <div className="flex items-center justify-center md:justify-end">
                   <Phone className="w-4 h-4 mr-2" />
-                  <span className="text-gray-400">Call for class info</span>
+                  <a href={`tel:${String.fromCharCode(56, 48, 49)}-${String.fromCharCode(53, 48, 51)}-${String.fromCharCode(55, 55, 48, 51)}`} className="text-gray-400 hover:text-purple-400 transition-colors">
+                    Call for class info
+                  </a>
                 </div>
               </div>
             </div>
           </div>
           
           <div className="border-t border-gray-700 pt-8 text-center">
+            <p className="text-gray-500 text-sm mb-2">
+              © {new Date().getFullYear()} Carla's Candy Creations. All rights reserved. | Made with ❤️ for sweet learning
+            </p>
             <p className="text-gray-500 text-sm">
-              © 2024 Carla's Candy Creations. All rights reserved. | Made with ❤️ for sweet learning
+              Website Design by <a href="https://candl-innovations.net" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition-colors">C&L Innovations</a>
             </p>
           </div>
         </div>

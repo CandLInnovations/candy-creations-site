@@ -66,7 +66,7 @@ export default function HomePage() {
 
             {/* Hero Image */}
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+              <div className="scalloped-frame transform rotate-2 hover:rotate-0 transition-transform duration-500 shadow-2xl">
                 <Image
                   src="/salted_carmel_chocolate_tray.webp"
                   alt="Beautiful handcrafted chocolates"
@@ -74,11 +74,6 @@ export default function HomePage() {
                   height={400}
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-pink-900/20 to-transparent"></div>
-              </div>
-              {/* Floating decoration */}
-              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-pink-400 rounded-full p-3 animate-pulse">
-                <Candy className="w-6 h-6 text-white" />
               </div>
             </div>
           </div>
@@ -100,14 +95,16 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Grandma Effie Story */}
             <div className="story-card group">
-              <div className="relative mb-6 overflow-hidden rounded-2xl">
-                <Image
-                  src="/grandma_effie_inspiration.webp"
-                  alt="Grandma Effie's inspiration"
-                  width={400}
-                  height={300}
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+              <div className="relative mb-6">
+                <div className="scalloped-frame">
+                  <Image
+                    src="/grandma_effie_inspiration.webp"
+                    alt="Grandma Effie's inspiration"
+                    width={400}
+                    height={300}
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
                 <div className="absolute top-4 left-4">
                   <span className="bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Since 1897
@@ -132,14 +129,16 @@ export default function HomePage() {
 
             {/* Fondant Mastery */}
             <div className="story-card group">
-              <div className="relative mb-6 overflow-hidden rounded-2xl">
-                <Image
-                  src="/fondant.webp"
-                  alt="Artisan fondant creation"
-                  width={400}
-                  height={300}
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+              <div className="relative mb-6">
+                <div className="scalloped-frame">
+                  <Image
+                    src="/fondant.webp"
+                    alt="Artisan fondant creation"
+                    width={400}
+                    height={300}
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
                 <div className="absolute top-4 left-4">
                   <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Master Class
@@ -165,14 +164,16 @@ export default function HomePage() {
 
             {/* Recipe Collection */}
             <div className="story-card group">
-              <div className="relative mb-6 overflow-hidden rounded-2xl">
-                <Image
-                  src="/pecan_logs_sliced.webp"
-                  alt="Artisan pecan logs"
-                  width={400}
-                  height={300}
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+              <div className="relative mb-6">
+                <div className="scalloped-frame">
+                  <Image
+                    src="/pecan_logs_sliced.webp"
+                    alt="Artisan pecan logs"
+                    width={400}
+                    height={300}
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
                 <div className="absolute top-4 left-4">
                   <span className="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     50+ Recipes
@@ -308,7 +309,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+              <div className="scalloped-frame transform -rotate-2 hover:rotate-0 transition-transform duration-500 shadow-2xl">
                 <Image
                   src="/purple-chocolate-box.webp"
                   alt="Custom embroidered aprons"
@@ -364,7 +365,7 @@ export default function HomePage() {
       <section className="py-20 bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <div className="relative mb-12">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl mx-auto max-w-md">
+            <div className="scalloped-frame mx-auto max-w-md shadow-2xl">
               <Image
                 src="/tree_box_hand_dipped_chocolates_home.webp"
                 alt="Beautiful handcrafted chocolates ready to enjoy"
@@ -372,7 +373,6 @@ export default function HomePage() {
                 height={300}
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent"></div>
             </div>
           </div>
           

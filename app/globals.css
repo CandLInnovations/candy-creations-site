@@ -484,3 +484,65 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Feminine scalloped frames with purple gradient */
+.scalloped-frame {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  padding: 8px;
+  background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #6366F1 100%);
+}
+
+.scalloped-frame::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: white;
+  border-radius: 1.5rem;
+  z-index: 1;
+}
+
+.scalloped-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(99, 102, 241, 0.2) 0%, transparent 50%);
+  opacity: 0.6;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scalloped-frame img {
+  position: relative;
+  z-index: 3;
+  border-radius: 1.25rem;
+}
+
+/* Scalloped edge pattern using CSS */
+.scalloped-edge {
+  position: relative;
+}
+
+.scalloped-edge::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #6366F1 100%);
+  border-radius: 2rem;
+  z-index: -2;
+  mask: 
+    radial-gradient(circle at 0% 50%, transparent 12px, black 12px),
+    radial-gradient(circle at 25% 50%, transparent 8px, black 8px),
+    radial-gradient(circle at 50% 50%, transparent 10px, black 10px),
+    radial-gradient(circle at 75% 50%, transparent 8px, black 8px),
+    radial-gradient(circle at 100% 50%, transparent 12px, black 12px);
+  mask-composite: intersect;
+}
